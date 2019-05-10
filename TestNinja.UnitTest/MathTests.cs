@@ -6,13 +6,21 @@ namespace TestNinja.UnitTest
     [TestFixture]
     public class MathTests
     {
+        private Math _math;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _math = new Math();
+        }
+        
+        //TearDown
+
         [Test]
         public void Add_WhenCalled_ReturnsSumOfArguments()
         {
             
-            var math = new Math();
-            
-            var result = math.Add(1, 2);
+            var result = _math.Add(1, 2);
             
             Assert.That(result, Is.EqualTo(3));
         }
@@ -21,9 +29,7 @@ namespace TestNinja.UnitTest
         public void Max_FirstArgumentIsGreater_ReturnsFirstArgument()
         {
 
-            var math = new Math();
-
-            var result = math.Max(3, 2);
+            var result = _math.Max(3, 2);
 
             Assert.That(result, Is.EqualTo(3));
         }
@@ -32,20 +38,16 @@ namespace TestNinja.UnitTest
         public void Max_SecondArgumentIsGreater_ReturnsSecondArgument()
         {
 
-            var math = new Math();
-
-            var result = math.Max(1, 2);
+            var result = _math.Max(1, 2);
 
             Assert.That(result, Is.EqualTo(2));
         }
 
         [Test]
-        public void Max_Equals_ReturnsV2()
+        public void Max_ArgumentsAreEquals_ReturnsSameArgument()
         {
 
-            var math = new Math();
-
-            var result = math.Max(1, 1);
+            var result = _math.Max(1, 1);
 
             Assert.That(result, Is.EqualTo(1));
         }

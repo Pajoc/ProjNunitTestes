@@ -16,6 +16,7 @@ namespace TestNinja.Fundamentals
                 
             LastError = error; 
             
+
             // Write the log to a storage
             // ...
 
